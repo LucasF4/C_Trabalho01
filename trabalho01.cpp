@@ -10,6 +10,18 @@ struct produto{
 	int qtd;
 };
 
+//Função para criação do Pedido
+int fpedido(){
+	int option;
+	printf("------------ CARDAPIO --------------\n");
+	printf("| 1 - Refeições | 2 - Degustações  |\n");
+	printf("| 3 - Bebidas   |                  |\n");
+	printf("------------------------------------\n\n");
+	printf("Escolha a opção que você deseja fazer o pedido: ");
+	scanf("%d", &option);
+	return 0;
+}
+
 //Menu Iniciar do Aplicativo
 int main(){
 	int choice;
@@ -22,13 +34,11 @@ int main(){
 	scanf("%d", &choice);
 	switch(choice){
 		case 1: {
+			system("cls");
 			fpedido();
 			break;
 		}
 	}
 }
 
-//Função para criação do Pedido
-void fpedido(){
-	
-}
+
