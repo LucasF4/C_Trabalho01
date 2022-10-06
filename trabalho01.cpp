@@ -22,6 +22,16 @@ int fpedido(){
 	return 0;
 }
 
+//Função de criação de alteração do pedido
+int alterpedido(){
+	printf("Criar menu de alterar pedido");
+}
+
+//Função de criação de consultar pedido
+int consulpedido(){
+	printf("Criar menu de cunsultar pedido");
+}
+
 //Menu Iniciar do Aplicativo
 int main(){
 	int choice;
@@ -36,6 +46,22 @@ int main(){
 		case 1: {
 			system("cls");
 			fpedido();
+			break;
+		}
+		case 2: {
+			system("cls");
+			alterpedido();
+			break;
+		}
+		case 3: {
+			system("cls");
+			consulpedido();
+			break;
+		}
+		case 4: {
+			system("cls");
+			printf("Saindo da aplicação...");
+			return 0;
 			break;
 		}
 	}
