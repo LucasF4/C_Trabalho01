@@ -25,15 +25,15 @@ int main(void){
 }
 
 
-//FunÁ„o de criaÁ„o de pedido
+//Fun√ß√£o de cria√ß√£o de pedido
 int fpedido(){
 	int option;
 	int ref;
 	printf("------------ CARDAPIO --------------\n");
-	printf("| 1 - RefeiÁıes | 2 - DegustaÁıes  |\n");
+	printf("| 1 - Refei√ß√µes | 2 - optionDrinkusta√ß√µes  |\n");
 	printf("| 3 - Bebidas   | 4 - Voltar       |\n");
 	printf("------------------------------------\n\n");
-	printf("Escolha a opÁ„o que vocÍ deseja fazer o pedido: ");
+	printf("Escolha a op√ß√£o que voc√™ deseja fazer o pedido: ");
 	scanf("%d", &option);
 	system("cls");
 	switch (option){
@@ -47,7 +47,7 @@ int fpedido(){
 			printf("-------------------------------\n");
 			printf("| 4 - Panelada                |\n");
 			printf("-------------------------------\n");
-			printf("Escolha uma RefeiÁ„o: ");
+			printf("Escolha uma Refei√ß√£o: ");
 			scanf("%d", &ref);
 			printf("Informe a quantidade: ");
 			scanf("%d", &produto.qtd);
@@ -60,14 +60,15 @@ int fpedido(){
 			}else if(ref == 4){
 				strcpy(produto.nome, "Panelada");
 			}else{
-				printf("Escolha uma opÁ„o v·lida!");
+				printf("Escolha uma op√ß√£o v√°lida!");
 				return fpedido();
 			}
-			printf("\nVocÍ adicionou o Ìtem: %s com a quantidade de %d\n", produto.nome, produto.qtd);
+			printf("\nVoc√™ adicionou o item: %s com a quantidade de %d\n", produto.nome, produto.qtd);
 			return fpedido();
 			break;
 		}
 		case 2:{
+			int deg;
 			printf("---------- CARDAPIO ----------\n");
 			printf("| 1 - Batata Frita          |\n");
 			printf("-----------------------------\n");
@@ -76,7 +77,25 @@ int fpedido(){
 			printf("| 3 - Enrolados de Presunto |\n");
 			printf("-----------------------------\n");
 			printf("| 4 - Petisco Sacanagem     |\n");
-			printf("-----------------------------");
+			printf("-----------------------------\n");
+			printf("Escolha uma Refei√ß√£o: ");
+			scanf("%d", &deg);
+			printf("Informe a quantidade: ");
+			scanf("%d", &produto.qtd);
+			if(deg == 1){
+				strcpy(produto.nome, "Batata Frita");
+			}else if(deg == 2){
+				strcpy(produto.nome, "Enrolados de Carne");
+			}else if(deg == 3){
+				strcpy(produto.nome, "Enrolados de Presunto");
+			}else if(deg == 4){
+				strcpy(produto.nome, "Petisco Sacanagem");
+			}else{
+				printf("Escolha uma op√ß√£o v√°lida!");
+				return fpedido();
+			}
+			printf("\nVoc√™ adicionou o item: %s com a quantidade de %d\n", produto.nome, produto.qtd);
+			return fpedido();
 			break;
 		}
 		case 3:{
@@ -84,20 +103,40 @@ int fpedido(){
 			printf("---------- CARDAPIO ----------\n");
 			printf("| 1 - Coca-Cola                  |\n");
 			printf("-----------------------------\n");
-			printf("| 2 - Suco (Maracuj· e Acerola)  |\n");
+			printf("| 2 - Suco Maracuj√°              |\n");
 			printf("-----------------------------\n");
 			printf("| 3 - Cerveja (Skol, Brahma)     |\n");
 			printf("-----------------------------\n");
-			printf("| 4 - ¡gua com g·s               |\n");
+			printf("| 4 - √Ågua com g√°s               |\n");
 			printf("-----------------------------\n");
 			printf("| 5 - Voltar                     |\n");
 			printf("-----------------------------\n");
-			printf("Escolha uma opÁ„o v·lida: ");
+			printf("Escolha uma op√ß√£o v√°lida: ");
 			scanf("%d", &optionDrink);
 			system("cls");
-			if(optionDrink == 5){
-				fpedido();
+			printf("Informe a quantidade: ");
+			scanf("%d", &produto.qtd);
+			if(optionDrink == 1){
+				strcpy(produto.nome, "Coca-Cola");
 			}
+			else if(optionDrink == 2){
+				strcpy(produto.nome, "Suco Maracuj√°");
+			}
+			else if(optionDrink == 3){
+				strcpy(produto.nome, "Cerveja (Skol, Brahma)");
+			}
+			else if(optionDrink == 4){
+				strcpy(produto.nome, "√Ågua com g√°s");
+			}
+			else if(optionDrink == 5){
+				return fpedido();
+			}else{
+				printf("Escolha uma op√ß√£o v√°lida!");
+				return fpedido();
+			}
+
+			printf("\nVoc√™ adicionou o item: %s com a quantidade de %d\n", produto.nome, produto.qtd);
+			return fpedido();
 			break;
 	
 		}
@@ -110,21 +149,22 @@ int fpedido(){
 	return 0;
 }
 
-//FunÔøΩÔøΩo de criaÔøΩÔøΩo de alteraÔøΩÔøΩo do pedido
+//Fun√ß√£o de cria√ß√£o de altera√ß√£o do pedido
 int alterpedido(){
-	printf("Criar menu de alterar pedido");
+	printf("Alterar pedido");
+
 }
 
-//FunÔøΩÔøΩo de criaÔøΩÔøΩo de consultar pedido
+//Fun√ß√£o de cria√ß√£o de consultar pedido
 int consulpedido(){
 	int retorno;
 	printf("Seus pedidos: \n");
-	printf("%s\n", produto.nome);
+	printf("%d %s \n",produto.qtd, produto.nome);
 	printf("Pressione 0 para voltar!\n");
 	scanf("%d", &retorno);
 	if(retorno != 0){
 		system("cls");
-		printf("Informe uma opÁ„o v·lida!\n");
+		printf("Informe uma op√ß√£oo v√°lida!\n");
 		consulpedido();
 	}else{
 		fpedido();
@@ -137,7 +177,7 @@ int telaPrincipal(){
 	printf("| 1 - Fazer Pedido     | 2 - Alterar Pedido |\n");
 	printf("| 3 - Consultar Pedido | 4 - Sair           |\n");
 	printf("------------------------------------------\n");
-	printf("Escolha uma opÁ„o: ");
+	printf("Escolha uma op√ß√£o: ");
 	scanf("%d", &choice);
 	switch(choice){
 		case 1: {
@@ -157,7 +197,7 @@ int telaPrincipal(){
 		}
 		case 4: {
 			system("cls");
-			printf("Saindo da aplicaÁ„o...");
+			printf("Saindo da aplica√ß√£o...");
 			return 0;
 			break;
 		}
