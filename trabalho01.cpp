@@ -117,8 +117,18 @@ int alterpedido(){
 
 //Funï¿½ï¿½o de criaï¿½ï¿½o de consultar pedido
 int consulpedido(){
-	printf("Criar menu de cunsultar pedido");
-	printf("%s", produto.nome);
+	int retorno;
+	printf("Seus pedidos: \n");
+	printf("%s\n", produto.nome);
+	printf("Pressione 0 para voltar!\n");
+	scanf("%d", &retorno);
+	if(retorno != 0){
+		system("cls");
+		printf("Informe uma opção válida!\n");
+		consulpedido();
+	}else{
+		fpedido();
+	}
 }
 
 int telaPrincipal(){
