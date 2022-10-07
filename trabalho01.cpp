@@ -11,10 +11,22 @@ struct Produto{
 	int qtd;
 };
 
+Produto produto;
+
+int fpedido();
+int alterpedido();
+int consulpedido();
+int telaPrincipal();
+
+//Menu Iniciar do Aplicativo
+int main(void){
+	setlocale(LC_ALL, "Portuguese");
+	telaPrincipal();
+}
+
 
 //Função de criação de pedido
 int fpedido(){
-	Produto produto;
 	int option;
 	int ref;
 	printf("------------ CARDAPIO --------------\n");
@@ -68,6 +80,7 @@ int fpedido(){
 			break;
 		}
 		case 3:{
+			int optionDrink;
 			printf("---------- CARDAPIO ----------\n");
 			printf("| 1 - Coca-Cola                  |\n");
 			printf("-----------------------------\n");
@@ -76,12 +89,20 @@ int fpedido(){
 			printf("| 3 - Cerveja (Skol, Brahma)     |\n");
 			printf("-----------------------------\n");
 			printf("| 4 - Água com gás               |\n");
-			printf("-----------------------------");
+			printf("-----------------------------\n");
+			printf("| 5 - Voltar                     |\n");
+			printf("-----------------------------\n");
+			printf("Escolha uma opção válida: ");
+			scanf("%d", &optionDrink);
+			system("cls");
+			if(optionDrink == 5){
+				fpedido();
+			}
 			break;
 	
 		}
 		case 4: {
-			int telaPrincipal();
+			telaPrincipal();
 			break;
 		}	
 	}
@@ -97,6 +118,7 @@ int alterpedido(){
 //Funï¿½ï¿½o de criaï¿½ï¿½o de consultar pedido
 int consulpedido(){
 	printf("Criar menu de cunsultar pedido");
+	printf("%s", produto.nome);
 }
 
 int telaPrincipal(){
@@ -132,10 +154,6 @@ int telaPrincipal(){
 	}
 }
 
-//Menu Iniciar do Aplicativo
-int main(void){
-	setlocale(LC_ALL, "Portuguese");
-	telaPrincipal();
-}
+
 
 
