@@ -3,3 +3,5 @@
 #include <math.h>
 
 //Biblioteca API da aplicação
+
+
