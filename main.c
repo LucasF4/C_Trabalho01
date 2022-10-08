@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
-#include <cstring>
+#include <string.h>
 
 //Estrutura do Produto
-struct Produto{
+typedef struct
+{
 	char nome[50];
 	int codProd;
 	int qtd;
-};
+} Produto;
 
 Produto produto;
 
